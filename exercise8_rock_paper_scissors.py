@@ -23,17 +23,14 @@ def winners_must_wait():
 
 def compare(play1, play2):
     if play1 == play2:
-            winners_must_wait()
             print("It's a TIE!")
     elif play1 == "rock":
-        if play2 == "scissors": 
-            winners_must_wait()
+        if play2 == "scissors":
             print(f"{player1_name} WINS!")  # rock beats scissors
         else:
             print(f"{player2_name} WINS!")  # paper beats rock
     elif play1 == "scissors":
-        if play2 == "paper": 
-            winners_must_wait()
+        if play2 == "paper":
             print(f"{player1_name} WINS!")  # scissors beats paper
         else:
             print(f"{player2_name} WINS!")  # rock beats scissors
