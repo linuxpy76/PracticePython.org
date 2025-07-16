@@ -21,6 +21,30 @@ def winners_must_wait():
         suspense = suspense - 1
     print("Here are the results:")
 
+def compare(play1, play2):
+    if play1 == play2:
+            winners_must_wait()
+            print("It's a TIE!")
+    elif play1 == "rock":
+        if play2 == "scissors": 
+            winners_must_wait()
+            print(f"{player1_name} WINS!")  # rock beats scissors
+        else:
+            print(f"{player2_name} WINS!")  # paper beats rock
+    elif play1 == "scissors":
+        if play2 == "paper": 
+            winners_must_wait()
+            print(f"{player1_name} WINS!")  # scissors beats paper
+        else:
+            print(f"{player2_name} WINS!")  # rock beats scissors
+    elif play1 == "paper":
+        if play2 == "rock":
+            print(f"{player1_name} WINS!")  # paper beats rock
+        else:
+            print(f"{player2_name} WINS!")  # scissors beats paper
+    else:
+        print("Error")
+
 print("\nThis is Rock-Paper-Scissors, there are two players, each player will select a play.\n")
 
 player1_name = str(input("Player 1, what is your name: "))
@@ -43,30 +67,8 @@ while True:
             break
     clear_console()
 
-    if play1 == play2:
-        winners_must_wait()
-        print("It's a TIE!")
-    elif play1 == "rock" and play2 == "paper":
-        winners_must_wait()
-        print(f"{player2_name} WINS!")
-    elif play1 == "rock" and play2 == "scissors":
-        winners_must_wait()
-        print(f"{player1_name} WINS!")
-    elif play1 == "paper" and play2 == "rock":
-        winners_must_wait()
-        print(f"{player1_name} WINS!")
-    elif play1 == "paper" and play2 == "scissors":
-        winners_must_wait()
-        print(f"{player2_name} WINS!")
-    elif play1 == "scissors" and play2 == "rock":
-        winners_must_wait()
-        print(f"{player2_name} WINS!")
-    elif play1 == "scissors" and play2 == "paper":
-        winners_must_wait()
-        print(f"{player1_name} WINS!")
-    else:
-        print("Error")
-        break
+    winners_must_wait()
+    compare(play1, play2)
     
     print(f"{player1_name} chose {play1}")
     print(f"{player2_name} chose {play2}")
