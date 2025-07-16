@@ -38,6 +38,7 @@ while True:
         else:
             print(f"You got it in {str(guesses)} guesses.")
             print("Play again!\n")
+            guesses == 0
     elif guess > a:
         print(f"Your guess {guess} is too high.")
         print("Try again!\n")
