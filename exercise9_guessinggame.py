@@ -12,18 +12,16 @@ def is_number(guess):
 guesses = 0
 
 while True:
-
     while True:
-
         guess = input("Guess a number between 1 and 9 or exit: ").lower()
-
         if guess == "exit":
             break
-
         if is_number(guess) == False:
             print("Please type a number or 'exit'")
-        
         if is_number(guess) == True:
+            break
+
+    if guess == "exit":
             break
 
     guess = int(guess)
@@ -32,13 +30,13 @@ while True:
         print(f"You guessed the number correctly! The number was {a}.")
         guesses = guesses + 1
         if guesses == 1:
-            print(f"You got it in {str(guesses)} guess.")
+            print(f"You got it in {guesses} guess.")
             print("Play again!\n")
-            guesses == 0
+            guesses = 0
         else:
-            print(f"You got it in {str(guesses)} guesses.")
+            print(f"You got it in {guesses} guesses.")
             print("Play again!\n")
-            guesses == 0
+            guesses = 0
     elif guess > a:
         print(f"Your guess {guess} is too high.")
         print("Try again!\n")
@@ -50,5 +48,3 @@ while True:
     else:
         print("Error")
         break
-
-    
